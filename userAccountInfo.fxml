@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="account" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.userAccountInfoController">
+ 
+    <children>
+   
+      <VBox prefHeight="410.0" prefWidth="72.0" style="-fx-background-color: #F1C40F;">
+         <children>
+            <Button fx:id="btnDashboardUser" mnemonicParsing="false" onAction="#btnDashboardUser2" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/color%20Dashboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnUserReservation" mnemonicParsing="false" onAction="#btnUserReservation" prefHeight="58.0" prefWidth="68.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/phone.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnSeeMenu" mnemonicParsing="false" onAction="#btnSeeMenu" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/pizza2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnSeeAccountInfo" mnemonicParsing="false" onAction="#btnSeeAccountInfo" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/seeAccount.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="userSeeMenu1" text="Check the account info" />
+               </tooltip>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <JFXButton fx:id="btnLogOut" buttonType="RAISED" layoutX="502.0" onAction="#btnLogOut" prefHeight="56.0" prefWidth="52.0" style="-fx-background-color: #5DADE2;" textFill="#f4f0f0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label alignment="TOP_LEFT" layoutX="93.0" layoutY="14.0" prefHeight="45.0" prefWidth="262.0" text="My Profile" textFill="#4e0a04">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="37.0" />
+         </font>
+      </Label>
+      <Text layoutX="305.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="277.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password:" wrappingWidth="132.4423828125">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="272.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="newPassword" alignment="CENTER" layoutX="421.0" layoutY="178.0" prefHeight="25.0" prefWidth="145.0" />
+      <JFXTextField fx:id="confirmPassword" alignment="CENTER" layoutX="421.0" layoutY="248.0" prefHeight="25.0" prefWidth="145.0" />
+      <ImageView fitHeight="314.0" fitWidth="174.0" layoutX="93.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Users-Find-User-icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="save" layoutX="395.0" layoutY="336.0" onAction="#saveBtn" prefHeight="44.0" prefWidth="107.0" style="-fx-background-color: #5DADE2;" text="save">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="password" alignment="CENTER" layoutX="421.0" layoutY="110.0" prefHeight="25.0" prefWidth="145.0" />
+   </children>
+</AnchorPane>
