@@ -90,18 +90,57 @@ Parent root;
 ///by clicking this it will go the the menu page to see the menu of the restaurant
     @FXML
     void btnSeeMenu(ActionEvent event) throws IOException {
-
+Parent root;
+   root= FXMLLoader.load(getClass().getResource("menu.fxml"));
+              Stage s= new Stage();
+              Scene scene = new Scene(root);
+              s.setTitle("                   Restaurant Menu");
+               s.setScene(scene);
+                s.show();
     }
 ///by clicking this it will go the User reservation page where user will reserve one table at a specific time and Date
     @FXML
     void btnUserReservation(ActionEvent event) throws IOException {
-
+Parent root;
+   root= FXMLLoader.load(getClass().getResource("userReservationPage.fxml"));
+              Stage s= new Stage();
+              Scene scene = new Scene(root);
+               s.setTitle("               User Reservation Page");
+               s.setScene(scene);
+                s.show();
+ ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();  
     }
 ///by clicking this the user will see all her/his account information
    @FXML
-    void btnSeeAccountInfo(ActionEvent event) {
+    void btnSeeAccountInfo(ActionEvent event) throws IOException {
 
+    Parent root;
+   root= FXMLLoader.load(getClass().getResource("userAccountInfo.fxml"));
+              Stage s= new Stage();
+              Scene scene = new Scene(root);
+               s.setTitle("               User Account information Page");
+               s.setScene(scene);
+                s.show();
+ ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();  
     }
+   /////////////////////////////////////////////////////////////////////////
+    //////////User Reservation Page
+ 
+
+    @FXML
+    private JFXTextField txtName;
+
+    @FXML
+    private JFXTextField txtTableNum;
+
+    @FXML
+    private JFXTextField txtGuestNum;
+
+    @FXML
+    private JFXButton btnSend;
+
+    @FXML
+    private JFXDatePicker txtDate;
 
     @FXML
     private JFXTimePicker txtTime;
@@ -119,11 +158,58 @@ Parent root;
     }
     
 
-
+///when the user clicks the btnSend button all information will be saved in the reservation table inside the dbrestuarant Database
+  
+    @FXML
+    void btnSend(ActionEvent event) throws SQLException {
+         try {
+            ///Also before inserting the data  it will check if the time table number and date exist in the database 
+            ////if it exist then it will ask to choose another one 
+             con= dbConnection.connection();
+              String check = "SELECT * FROM `reservation` WHERE TableName=? AND Time =? AND Date=?";
+             pst=(com.mysql.jdbc.PreparedStatement) con.prepareStatement(check);
+              pst.setString(1, txtTableNum.getText());
+              pst.setString(2, txtTime.getValue().toString());
+               pst.setString(3, txtDate.getValue().toString());
+             rs= pst.executeQuery();
+             
+             if(rs.next()){
+             JOptionPane.showMessageDialog(null, "The Table has been reserved by another Customer At that \n '"+txtTime.getValue().toString()+"' time and  '"+txtDate.getValue().toString()+"'\n Date Please choose another one, Or change the Date and Time");
+             }
+             
+             /////if the data doesnt exist in the table already then insert the data into the columns
+             else{
+             
+                String sql= "INSERT INTO `reservation`(`Name`, `TableName`, `GuestNumber`,`Time`, `Date`) VALUES (?,?,?,?,?)";
+        
+                        pst=(com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+                       
+                          pst.setString(1, txtName.getText());
+                          pst.setString(2, txtTableNum.getText());
+                         pst.setString(3, txtGuestNum.getText());
+                         pst.setString(4, txtTime.getValue().toString());
+                          
+                           pst.setString(5, txtDate.getValue().toString());
+                         
+                           pst.executeUpdate();
+                          
+                            JOptionPane.showMessageDialog(null, "Inserted Successfully");  
+                         txtName.clear();
+                         txtTableNum.clear();
+                         txtGuestNum.clear();
+            
+             }
+     
+             
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(userController.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                     
                      
                             
                      
-
+                        
+    }
 
   
 
