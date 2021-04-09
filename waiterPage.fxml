@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.WaiterPageController">
+   <children>
+      <VBox layoutY="1.0" prefHeight="500.0" prefWidth="45.0" style="-fx-background-color: #F1C40F;">
+         <children>
+            <Button fx:id="btnDashboardUser" mnemonicParsing="false" onAction="#btnDashboardUser2" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/color%20Dashboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="userDashboard" text="Dashboard" />
+               </tooltip>
+            </Button>
+            <Button fx:id="navTask" mnemonicParsing="false" onAction="#btnSeeTasks" prefHeight="58.0" prefWidth="68.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/task.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip fx:id="userCheckReservation" text="See Assigned Tasks" />
+               </tooltip>
+            </Button>
+            <Button fx:id="navMenu" mnemonicParsing="false" onAction="#btnSeeMenu" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/burger.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip fx:id="userSeeMenu" text="Check the Menu" />
+               </tooltip>
+            </Button>
+            <Button fx:id="naveatten" mnemonicParsing="false" onAction="#btnSeeAttend" prefHeight="58.0" prefWidth="68.0" style="-fx-background-color: #F1C40F;" textFill="#fdfafa">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/attendence.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="userCheckReservation1" text="Attendence" />
+               </tooltip>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <JFXButton fx:id="btnLogOut" layoutX="501.0" layoutY="1.0" onAction="#btnLogOut" prefHeight="47.0" prefWidth="98.0" style="-fx-background-color: #5DADE2;" textFill="#f4f0f0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="165.0" layoutY="28.0" prefHeight="45.0" prefWidth="267.0" text="Dashboard" textFill="#6e2d05">
+         <font>
+            <Font name="Times New Roman Bold" size="37.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="55.0" fitWidth="76.0" layoutX="110.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/iconfinder_Dashboard_728992.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="110.0" layoutY="73.0" prefHeight="39.0" prefWidth="470.0" text="Welcome to the Main Page" textFill="#6e2d05">
+         <font>
+            <Font name="Times New Roman Bold" size="34.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="seeMenu" alignment="BOTTOM_CENTER" layoutX="110.0" layoutY="149.0" onAction="#btnSeeMenu" prefHeight="148.0" prefWidth="171.0" style="-fx-background-color: #FEF9E7;" text="Menu" textFill="#3a0905">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <ImageView accessibleRole="BUTTON" fitHeight="105.0" fitWidth="161.0" layoutX="131.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/burger.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="seeTasks" alignment="BOTTOM_CENTER" layoutX="368.0" layoutY="149.0" onAction="#btnSeeTasks" prefHeight="148.0" prefWidth="171.0" style="-fx-background-color: #FEF9E7;" text="Tasks" textFill="#3a0905">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <ImageView accessibleRole="BUTTON" fitHeight="105.0" fitWidth="161.0" layoutX="413.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/task.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="seeAttend" alignment="BOTTOM_CENTER" layoutX="242.0" layoutY="339.0" onAction="#btnSeeAttend" prefHeight="148.0" prefWidth="171.0" style="-fx-background-color: #FEF9E7;" text="Attendence" textFill="#3a0905">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <ImageView accessibleRole="BUTTON" fitHeight="105.0" fitWidth="161.0" layoutX="275.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/attendence.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
