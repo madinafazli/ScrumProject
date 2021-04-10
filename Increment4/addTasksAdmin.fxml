@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.AddTasksAdminController">
+   <children>
+      <BorderPane prefHeight="38.0" prefWidth="1188.0" style="-fx-background-color: #F1C40F;">
+         <right>
+            <JFXButton fx:id="btnLogOut" buttonType="RAISED" onAction="#btnLogOut" prefHeight="49.0" prefWidth="46.0" textFill="#f8f6f6" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </right>
+      </BorderPane>
+      <TableView fx:id="TableView" editable="true" layoutX="307.0" layoutY="38.0" prefHeight="494.0" prefWidth="376.0">
+         <columns>
+            <TableColumn fx:id="tbID" prefWidth="51.6666259765625" text="ID" />
+            <TableColumn fx:id="tbName" prefWidth="129.0" text="Full Name" />
+            <TableColumn fx:id="tbTableNum" prefWidth="93.3333740234375" text="Table Number" />
+            <TableColumn fx:id="tbStatus" prefWidth="104.66668701171875" text="Status" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="id" alignment="CENTER" layoutX="39.0" layoutY="93.0" onKeyPressed="#enter" prefHeight="38.0" prefWidth="207.0" promptText="Add ID">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="name" alignment="CENTER" layoutX="39.0" layoutY="190.0" prefHeight="38.0" prefWidth="207.0" promptText="Add Name">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="addTableNum" alignment="CENTER" layoutX="39.0" layoutY="292.0" prefHeight="38.0" prefWidth="207.0" promptText="Add Table Number">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="add" layoutX="39.0" layoutY="412.0" onAction="#add" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Add" />
+      <JFXButton fx:id="refresh" layoutX="125.0" layoutY="412.0" onAction="#refresh" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Refresh" />
+      <JFXButton fx:id="delete" layoutX="208.0" layoutY="412.0" onAction="#deleteBtm" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Delete" />
+      <TableView fx:id="TableView1" editable="true" layoutX="710.0" layoutY="124.0" prefHeight="408.0" prefWidth="448.0">
+         <columns>
+            <TableColumn fx:id="tbID1" prefWidth="53.66668701171875" text="ID" />
+            <TableColumn fx:id="tbName1" prefWidth="135.66668701171875" text="Full Name" />
+            <TableColumn fx:id="tbDate" prefWidth="139.3333740234375" text="Date" />
+            <TableColumn fx:id="tbAttendence" prefWidth="115.6666259765625" text="Attendence" />
+         </columns>
+      </TableView>
+      <JFXDatePicker fx:id="date" defaultColor="#85c1e9" layoutX="726.0" layoutY="69.0" prefHeight="25.0" prefWidth="238.0" promptText="Pick a Date" />
+      <JFXButton fx:id="search" layoutX="994.0" layoutY="66.0" onAction="#searchBtn" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Search" />
+   </children>
+</AnchorPane>
