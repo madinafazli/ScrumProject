@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.AddAttendenceAdminController">
+   <children>
+      <BorderPane layoutY="-5.0" prefHeight="38.0" prefWidth="1000.0" style="-fx-background-color: #F1C40F;">
+         <right>
+            <JFXButton fx:id="btnLogOut" buttonType="RAISED" onAction="#btnLogOut" prefHeight="49.0" prefWidth="46.0" textFill="#f8f6f6" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </right>
+      </BorderPane>
+      <TableView fx:id="TableView" editable="true" layoutX="342.0" layoutY="33.0" prefHeight="495.0" prefWidth="658.0">
+         <columns>
+            <TableColumn fx:id="tbID" prefWidth="53.66668701171875" text="ID" />
+            <TableColumn fx:id="tbName" prefWidth="135.66668701171875" text="Full Name" />
+            <TableColumn fx:id="tbStartTime" prefWidth="109.33331298828125" text="Starting Time" />
+            <TableColumn fx:id="tbEndTime" prefWidth="108.6666259765625" text="Ending Time" />
+            <TableColumn fx:id="tbDate" prefWidth="139.3333740234375" text="Date" />
+            <TableColumn fx:id="tbAttendence" prefWidth="115.6666259765625" text="Attendence" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="Enterid" alignment="CENTER" layoutX="77.0" layoutY="93.0" onKeyPressed="#enter" prefHeight="38.0" prefWidth="207.0" promptText="Add ID">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="name" alignment="CENTER" layoutX="77.0" layoutY="169.0" prefHeight="38.0" prefWidth="207.0" promptText="Add Name">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTimePicker fx:id="starting" defaultColor="#85c1e9" layoutX="77.0" layoutY="239.0" prefHeight="25.0" prefWidth="207.0" promptText="Starting Time" />
+      <JFXTimePicker fx:id="ending" defaultColor="#85c1e9" layoutX="77.0" layoutY="296.0" prefHeight="25.0" prefWidth="207.0" promptText="Ending Time" />
+      <JFXDatePicker fx:id="date" defaultColor="#85c1e9" layoutX="77.0" layoutY="357.0" prefHeight="25.0" prefWidth="196.0" promptText="Pick a Date" />
+      <ChoiceBox fx:id="choice" layoutX="77.0" layoutY="405.0" prefHeight="25.0" prefWidth="196.0" />
+      <JFXButton fx:id="add" layoutX="105.0" layoutY="466.0" onAction="#add" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Add" />
+      <JFXButton fx:id="refresh" layoutX="197.0" layoutY="466.0" onAction="#refresh" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Refresh" />
+   </children>
+</AnchorPane>
