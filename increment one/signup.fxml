@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="498.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.loginAndSignupController">
+   <children>
+      <ImageView fx:id="signupImg" fitHeight="515.0" fitWidth="398.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@food-photography-examples-5.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="279.0" layoutY="-4.0" prefHeight="506.0" prefWidth="428.0" style="-fx-background-color: white;">
+         <children>
+            <JFXTextField fx:id="textName" alignment="CENTER" focusColor="#d11963" layoutX="56.0" layoutY="35.0" prefHeight="36.0" prefWidth="292.0" promptText="Enter Your User Name" unFocusColor="#bb9694" />
+            <JFXTextField fx:id="textEmail" alignment="CENTER" focusColor="#d11963" layoutX="56.0" layoutY="100.0" prefHeight="36.0" prefWidth="292.0" promptText="Enter Your Email" unFocusColor="#bb9694" />
+            <JFXTextField fx:id="textAddress" alignment="CENTER" focusColor="#d11963" layoutX="56.0" layoutY="158.0" prefHeight="36.0" prefWidth="292.0" promptText="Enter Your Address" unFocusColor="#bb9694" />
+            <JFXTextField fx:id="textPhone" alignment="CENTER" focusColor="#d11963" layoutX="56.0" layoutY="224.0" prefHeight="36.0" prefWidth="292.0" promptText="Enter Your Phone Number" unFocusColor="#bb9694" />
+            <JFXButton fx:id="btnRegister" layoutX="82.0" layoutY="402.0" onAction="#btnRegisterClicked" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #FEF9E7;" text="Register" />
+            <JFXButton fx:id="btnReturn" layoutX="235.0" layoutY="402.0" onAction="#btnReturnClicked" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #FEF9E7;" text="Return" />
+            <Label fx:id="alerttxt" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="349.0" prefHeight="36.0" prefWidth="375.0" textAlignment="RIGHT" textFill="#dd1d1d">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <JFXPasswordField fx:id="textPassword" alignment="CENTER" focusColor="#d11963" layoutX="56.0" layoutY="289.0" prefHeight="36.0" prefWidth="292.0" promptText="Enter Your Password" unFocusColor="#bb9694" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="68.0" prefWidth="246.0" text="Create" textFill="#f8f6f6">
+         <font>
+            <Font name="Times New Roman Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label ellipsisString="" layoutX="36.0" layoutY="86.0" prefHeight="68.0" prefWidth="217.0" text="An Account" textFill="#fffafa" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
