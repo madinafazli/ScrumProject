@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.SeeAttendenceWaiterController">
+   <children>
+      <AnchorPane prefHeight="31.0" prefWidth="715.0" style="-fx-background-color: #F1C40F;">
+         <children>
+            <JFXButton fx:id="btnLogOut" buttonType="RAISED" layoutX="650.0" layoutY="7.0" onAction="#btnLogOut" prefHeight="37.0" prefWidth="59.0" text="Log Out" textFill="#f8f6f6">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="btnDashboard1" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="tbSearchID" alignment="CENTER" layoutX="136.0" layoutY="66.0" prefHeight="44.0" prefWidth="322.0" promptText="Enter Your ID" />
+      <JFXButton fx:id="btnSearch" layoutX="512.0" layoutY="76.0" onAction="#btnSearch" prefHeight="34.0" prefWidth="149.0" style="-fx-background-color: #F1C40F;" text="Search">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="TableView" editable="true" layoutX="24.0" layoutY="140.0" prefHeight="495.0" prefWidth="658.0">
+         <columns>
+            <TableColumn fx:id="tbID" prefWidth="53.66668701171875" text="ID" />
+            <TableColumn fx:id="tbName" prefWidth="135.66668701171875" text="Full Name" />
+            <TableColumn fx:id="tbStartTime" prefWidth="109.33331298828125" text="Starting Time" />
+            <TableColumn fx:id="tbEndTime" prefWidth="108.6666259765625" text="Ending Time" />
+            <TableColumn fx:id="tbDate" prefWidth="139.3333740234375" text="Date" />
+            <TableColumn fx:id="tbAttendence" prefWidth="115.6666259765625" text="Attendence" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
