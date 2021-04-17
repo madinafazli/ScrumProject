@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.SeeTasksWaiterController">
+   <children>
+      <BorderPane prefHeight="38.0" prefWidth="905.0" style="-fx-background-color: #F1C40F;">
+         <right>
+            <JFXButton fx:id="btnLogOut" buttonType="RAISED" onAction="#btnLogOut" prefHeight="49.0" prefWidth="46.0" textFill="#f8f6f6" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </right>
+      </BorderPane>
+      <TableView fx:id="TableView" editable="true" layoutX="384.0" layoutY="38.0" prefHeight="495.0" prefWidth="522.0">
+         <columns>
+            <TableColumn fx:id="tbID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="tbName" prefWidth="158.6666259765625" text="Full Name" />
+            <TableColumn fx:id="tbTableNum" prefWidth="137.3333740234375" text="Table Number" />
+            <TableColumn fx:id="tbStatus" prefWidth="148.33331298828125" text="Status" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="id" alignment="CENTER" layoutX="77.0" layoutY="93.0" onKeyPressed="#enter" prefHeight="38.0" prefWidth="207.0" promptText="Add ID">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="name" alignment="CENTER" layoutX="77.0" layoutY="190.0" prefHeight="38.0" prefWidth="207.0" promptText="Add Name">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="add" layoutX="91.0" layoutY="418.0" onAction="#add" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Add" />
+      <JFXButton fx:id="refresh" layoutX="246.0" layoutY="418.0" onAction="#refresh" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #85C1E9;" text="Refresh" />
+      <ChoiceBox fx:id="choice" layoutX="77.0" layoutY="293.0" prefHeight="25.0" prefWidth="207.0" />
+   </children>
+</AnchorPane>
